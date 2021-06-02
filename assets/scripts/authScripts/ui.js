@@ -30,6 +30,11 @@ const onSignInSuccess = function (responseData) {
   $('#recipeCreate').show()
   $('#recipeDelete').show()
   $('footer').show()
+  $('.navbar').show()
+  $('#firstLineUnauth').hide()
+  $('#firstLine').show()
+  $('.authBoxHeader').hide()
+  $('#recipeList').show()
 }
 
 const onSignOutSuccess = function () {
@@ -53,9 +58,13 @@ const onSignOutSuccess = function () {
   $('footer').hide()
   $('#signUp').show()
   $('#signIn').show()
+  $('#firstLineUnauth').show()
+  $('.navbar').hide()
+  $('.authBoxHeader').show()
 }
 
 const onChangePasswordSuccess = function () {
+  $('#changePass').hide()
   $('#changePass').trigger('reset')
   $('#changePassMessage').text('Your password has been changed!')
 
@@ -63,8 +72,22 @@ const onChangePasswordSuccess = function () {
     $('#changePassMessage').text('')
   , 3000)
 
-  $('#backButton').show()
+  $('#backButton').hide()
   $('#changePassword').hide()
+  $('#signIn').trigger('reset')
+  $('#signIn').hide()
+  $('#signUp').hide()
+  $('#signOut').show()
+  $('#passChangeButton').show()
+  $('#recipeView').show()
+  $('#recipeCreate').show()
+  $('#recipeDelete').show()
+  $('footer').show()
+  $('.navbar').show()
+  $('#firstLineUnauth').hide()
+  $('#firstLine').show()
+  $('.authBoxHeader').hide()
+  $('#recipeList').show()
 }
 
 // RECIPE CRUD ACTIONS
@@ -73,32 +96,37 @@ const onIndexRecipeSuccess = function (responseData) {
   $('#recipeList').show()
   const recipe = responseData.recipe
   let recipeHtml = ''
-  let updateHtml = ''
+  // let updateHtml = ''
   recipe.forEach(recipe => {
     recipeHtml += `
       <div id="recipeWindow">
-          <h4>${recipe.title}</h4>
-          <p>${recipe.link}</p>
-          <p>ID: ${recipe._id}</p>
-            <br>
-          <button class='deleteButton' data-id= ${recipe._id}>Delete</button>
-          <button class='updateButton' data-id= ${recipe._id}>Edit</button>
+          <h4>&#10024 ${recipe.title} &#10024</h4>
+          <a href="javascript:void(0)" target="_blank"><p>&#128421 ${recipe.link}</p></a>
+          <p id="recId">&#128452 ID: ${recipe._id}</p>
+
+          <div id="listButtons">
+            <button class='deleteButton' data-id= ${recipe._id}>Delete</button>
+            <button class='updateButton' data-id= ${recipe._id}>Edit</button>
+          </div>
+
+          <br>
+          <br>
       </div>
       `
-    updateHtml += `
-    <form id="recipeUpdate">
-        <input class="updateId" name="recipe[id]" type="text" placeholder="recipe ID" required>
-          <br>
-          <br>
-        <input class="updateTitle" name="recipe[title]" type="text" placeholder="recipe title">
-          <br>
-          <br>
-        <input class="updateLink" name="recipe[link]" type="text" placeholder="recipe link">
-          <br>
-          <br>
-        <button id="editRec">update</button>
-    </form>
-    `
+    // updateHtml += `
+    // <form id="recipeUpdate">
+    //     <input class="updateId" name="recipe[id]" type="text" placeholder="recipe ID" required>
+    //       <br>
+    //       <br>
+    //     <input class="updateTitle" name="recipe[title]" type="text" placeholder="recipe title">
+    //       <br>
+    //       <br>
+    //     <input class="updateLink" name="recipe[link]" type="text" placeholder="recipe link">
+    //       <br>
+    //       <br>
+    //     <button id="editRec">update</button>
+    // </form>
+    // `
   })
   if (recipeHtml === '') {
     // $('.error-message').text('No items yet. Add to your list!')
@@ -119,6 +147,8 @@ const onCreateRecipeSuccess = function () {
   setTimeout(() =>
     $('#recipeCreateMessage').text('')
   , 3000)
+
+  $('#recipeList').reload()
 }
 
 const onUpdateRecipeSuccess = function () {

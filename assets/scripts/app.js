@@ -5,6 +5,8 @@ const events = require('./authScripts/events')
 $(() => {
   // AUTHORIZATION PAGE
   $('#recipeView').hide()
+  $('.navbar').hide()
+  $('#firstLine').hide()
   $('#recipeCreate').hide()
   $('#recipeUpdate').hide()
   $('#recipeDelete').hide()
@@ -38,31 +40,27 @@ $(() => {
 
   // UPDATE FORM BUTTON
   $('#recipeList').on('click', '.updateButton', function () {
-    $(this).data('clicked', true)
-    // const recipe = responseData.recipe
-    // let updateForm = ''
-    // recipe.forEach(recipe => {
-    //   updateForm += `
-    //       <form id="recipeUpdate">
-    //         <input class="updateId" name="recipe[id]" type="text" placeholder="recipe ID" required>
-    //           <br>
-    //           <br>
-    //         <input class="updateTitle" name="recipe[title]" type="text" placeholder="recipe title">
-    //           <br>
-    //           <br>
-    //         <input class="updateLink" name="recipe[link]" type="text" placeholder="recipe link">
-    //           <br>
-    //           <br>
-    //         <button id="editRec">update</button>
-    //       </form>
-    //     `
-    // })
-    // $('#recipeList').html(updateForm)
+    $('#recipeUpdate').show()
   })
 
   // BACK BUTTON
   $('#backButton').on('click', function (event) {
-    event.preventDefault()
-    window.history.back()
+    $('#changePass').hide()
+    $('#backButton').hide()
+    $('#changePassword').hide()
+    $('#signIn').trigger('reset')
+    $('#signIn').hide()
+    $('#signUp').hide()
+    $('#signOut').show()
+    $('#passChangeButton').show()
+    $('#recipeView').show()
+    $('#recipeCreate').show()
+    $('#recipeDelete').show()
+    $('footer').show()
+    $('.navbar').show()
+    $('#firstLineUnauth').hide()
+    $('#firstLine').show()
+    $('.authBoxHeader').hide()
+    $('#recipeList').show()
   })
 })
