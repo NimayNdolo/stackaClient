@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>S T A C K A</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,121 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+      <div id="headBox">
+        <p>S T A C K A</p>
+        <p>The ONE PLACE for your SNACKA</p>
+      </div>
+
+      <!-- MESSAGING -->
+
+      <div id="signUpMessage"></div>
+      <div id="signInMessage"></div>
+      <div id="signOutMessage"></div>
+      <div id="changePassMessage"></div>
+      <div id="recipeIndexMessage"></div>
+      <div id="recipeCreateMessage"></div>
+      <div id="recipeUpdateMessage"></div>
+      <div id="recipeDeleteMessage"></div>
+      <div id="errorMessage"></div>
+
+
+      <!-- UNAUTH FEATURES -->
+      <button id="backButton">back</button>
+      <button id="signOut">sign out</button>
+      <button id="passChangeButton">change password</button>
+
+      <div class="authBox">
+
+        <form id="signIn">
+          <input name="credentials[email]" type="text" placeholder="Email" required>
+          <br>
+          <br>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <br>
+          <br>
+          <button>Sign In</button>
+            <br>
+        </form>
+
+            <br>
+
+        <form id="signUp">
+          <input name="credentials[email]" type="text" placeholder="Email" required>
+          <br>
+          <br>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <br>
+          <br>
+          <input name="credentials[password_confirmation]" type="password" placeholder="Re-type password" required>
+          <br>
+          <br>
+          <button>Sign Up</button>
+            <br>
+        </form>
+
+        </div>
+
+        <form id="changePass">
+            <input class="change" name="passwords[old]" type="password" placeholder="old password" required>
+            <br>
+            <br>
+            <input class="changeII" name="passwords[new]" type="password" placeholder="new password" required>
+            <br>
+            <br>
+            <button>Change Password</button>
+              <br>
+          </form>
+
+        <!-- AUTH FEATURES -->
+
+      <button id="recipeView">My Recipe Book</button>
+
+      <br>
+      <br>
+
+      <form id="recipeCreate">
+                <input class="createTitle" name="recipe[title]" type="text" placeholder="recipe title" required>
+                  <br>
+                  <br>
+                <input class="createLink" name="recipe[link]" type="text" placeholder="recipe link" required>
+                  <br>
+                  <br>
+                <button id="addRec">add</button>
+      </form>
+
+<!--
+      <form id="recipeUpdate">
+                <input class="updateId" name="recipe[id]" type="text" placeholder="recipe ID" required>
+                  <br>
+                  <br>
+                <input class="updateTitle" name="recipe[title]" type="text" placeholder="recipe title">
+                  <br>
+                  <br>
+                <input class="updateLink" name="recipe[link]" type="text" placeholder="recipe link">
+                  <br>
+                  <br>
+                <button id="editRec">update</button>
+      </form>
+
+    <form id="recipeDelete">
+                <input class="deleteRecipe" name="recipe[id]" type="text" placeholder="Item iD here" required>
+                  <br>
+                  <br>
+                <button>Delete</button>
+      </form>
+    -->
+
+      <div id="recipeList">
+        <p>Snackas</p>
+      </div>
+
+      <footer>
+        <br>
+        <br>
+        <p>Nimay Ndolo</p>
+      </footer>
+
     </body>
+
 </html>
