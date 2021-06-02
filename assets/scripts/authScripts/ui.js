@@ -101,7 +101,7 @@ const onIndexRecipeSuccess = function (responseData) {
     recipeHtml += `
       <div id="recipeWindow">
           <h4>&#10024 ${recipe.title} &#10024</h4>
-          <a href="javascript:void(0)" target="_blank"><p>&#128421 ${recipe.link}</p></a>
+          <a id="recLink" href="${recipe.link}" target="_blank"><p>&#128421 ${recipe.link}</p></a>
           <p id="recId">&#128452 ID: ${recipe._id}</p>
 
           <div id="listButtons">
@@ -148,7 +148,7 @@ const onCreateRecipeSuccess = function () {
     $('#recipeCreateMessage').text('')
   , 3000)
 
-  $('#recipeList').reload()
+  // $('#recipeList').load(' #recipeWindow')
 }
 
 const onUpdateRecipeSuccess = function () {
@@ -160,7 +160,6 @@ const onUpdateRecipeSuccess = function () {
   , 5000)
 
   $('#recipeUpdate').hide()
-  $('#recipeList').reload()
 }
 
 const onDeleteRecipeSuccess = function () {

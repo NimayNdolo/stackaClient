@@ -203,11 +203,18 @@ form {
 }
 
 #changePass {
+  margin-left: 45%;
+  margin-top: 3%;
+}
 
+#backButton {
+  margin-left: 40%;
+  margin-top: 100px;
 }
 
 #changePassHead {
-
+  color: white;
+  font-family: $roboto;
 }
 
 .deleteButton:hover {
