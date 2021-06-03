@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>S T A C K A</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="public/stackaMascotFavicon.png">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+          <a class="navbar-text d-flex justify-content-start" href="#" id="firstLine">S T A C K A</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav nav-fill w-100 mr-1 mt-6 mt-lg-0 my-2">
+        <a class="nav-item nav-link d-flex justify-content-end" id="passChangeButton">🍔 change password</a>
+        <a class="nav-item nav-link d-flex justify-content-end" href="/sign-out" id="signOut">🍋 sign out</a>
+      </div>
+      </div>
+
+    </nav>
+
+    <a><p id="firstLineUnauth">S T A C K A</p></a>
+
+      <!-- MESSAGING -->
+
+    <div id="messages">
+      <div id="signUpMessage"></div>
+      <div id="signInMessage"></div>
+      <div id="signOutMessage"></div>
+      <div id="changePassMessage"></div>
+      <div id="recipeIndexMessage"></div>
+      <div id="recipeCreateMessage"></div>
+      <div id="recipeUpdateMessage"></div>
+      <div id="recipeDeleteMessage"></div>
+      <div id="errorMessage"></div>
+    </div>
+
+      <!-- UNAUTH FEATURES -->
+      <button id="backButton">back 🍤</button>
+      <!-- <button id="signOut">sign out</button>
+      <button id="passChangeButton">change password</button> -->
+
+      <div class="authBox">
+
+        <img id="mascot" src="public/stackaMascotAnimated.gif" alt="StackaMascot" width="458" height="900">
+
+        <div class="authBoxII">
+
+        <p class="authBoxHeader">Come STACKA your SNACKA!  🍏</p>
+
+        <form id="signIn">
+          <input name="credentials[email]" type="text" placeholder="Email" required>
+          <br>
+          <br>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <br>
+          <br>
+          <button>🍑 Sign In</button>
+            <br>
+        </form>
+
+            <br>
+
+        <form id="signUp">
+          <input name="credentials[email]" type="text" placeholder="Email" required>
+          <br>
+          <br>
+          <input name="credentials[password]" type="password" placeholder="Password" required>
+          <br>
+          <br>
+          <input name="credentials[password_confirmation]" type="password" placeholder="Re-type password" required>
+          <br>
+          <br>
+          <button>🍌 Sign Up</button>
+            <br>
+        </form>
+      </div>
+
+        </div>
+
+        <form id="changePass">
+          <p id="changePassHead">change your password 🍫</p>
+            <input class="change" name="passwords[old]" type="password" placeholder="old password" required>
+            <br>
+            <br>
+            <input class="changeII" name="passwords[new]" type="password" placeholder="new password" required>
+            <br>
+            <br>
+            <button>🍰 Change Password</button>
+              <br>
+          </form>
+
+        <!-- AUTH FEATURES -->
+
+      <button id="recipeView">MY SNACKA BOOK 🍒</button>
+
+      <br>
+      <br>
+
+      <div class="headContentBox">
+
+<div id="crudForms">
+      <form id="recipeCreate">
+                <p id="recipeCreateHead">add recipes to your STACKA 🍥</p>
+                <input class="createTitle" name="recipe[title]" type="text" placeholder="recipe title" required>
+                  <br>
+                  <br>
+                <input class="createLink" name="recipe[link]" type="text" placeholder="recipe link" required>
+                  <br>
+                  <br>
+                <button id="addRec">🍟 add</button>
+      </form>
+
+      <br>
+      <br>
+
+      <form id="recipeUpdate">
+        <p id="recipeUpdateHead">update your STACKA 🍙</p>
+                <input class="updateId" name="recipe[id]" type="text" placeholder="recipe ID" required>
+                  <br>
+                  <br>
+                <input class="updateTitle" name="recipe[title]" type="text" placeholder="recipe title">
+                  <br>
+                  <br>
+                <input class="updateLink" name="recipe[link]" type="text" placeholder="recipe link">
+                  <br>
+                  <br>
+                <button id="editRec">🍭 update</button>
+      </form>
+
+    </div>
+
+      <div id="recipeList">
+        <p id="recListHeader"></p>
+      </div>
+
+    </div>
+
+<!--
+    <form id="recipeDelete">
+                <input class="deleteRecipe" name="recipe[id]" type="text" placeholder="Item iD here" required>
+                  <br>
+                  <br>
+                <button>Delete</button>
+      </form>
+    -->
+
+    </body>
+
+    <footer>
+      <br>
+      <br>
+    </footer>
+
+</html>
