@@ -54,16 +54,27 @@ form {
   font-size: $roboto;
 }
 
+button:hover {
+  color: black;
+}
+
 .authBox {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 65%;
   float: right;
   margin-right: 10%
+}
+
+.authBoxII {
+  margin-right: -10%;
 }
 
 .authBoxHeader {
   font-family: $odibee;
   font-size: 30px;
   color: white;
-  margin-left: -45px;
+  margin-left: -70px;
 }
 
 .headContentBox {
@@ -80,6 +91,10 @@ form {
   border: none;
 }
 
+#mascot {
+  margin-top: -85px;
+}
+
 #recListHeader {
   font-family: $odibee;
   font-size: 30px;
@@ -92,13 +107,14 @@ form {
   font-family: $odibee;
   font-size: 70px;
   color: white;
+  padding-left: 32px;
 }
 
 #firstLineUnauth {
   font-family: $odibee;
   font-size: 70px;
   color: white;
-  padding-left: 16px;
+  padding-left: 48px;
   padding-top: 16px;
 }
 

@@ -35,6 +35,7 @@ const onSignInSuccess = function (responseData) {
   $('#firstLine').show()
   $('.authBoxHeader').hide()
   $('#recipeList').show()
+  $('#mascot').hide()
 }
 
 const onSignOutSuccess = function () {
@@ -61,6 +62,7 @@ const onSignOutSuccess = function () {
   $('#firstLineUnauth').show()
   $('.navbar').hide()
   $('.authBoxHeader').show()
+  $('#mascot').show()
 }
 
 const onChangePasswordSuccess = function () {
