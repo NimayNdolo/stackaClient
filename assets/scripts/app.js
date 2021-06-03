@@ -62,5 +62,6 @@ $(() => {
     $('#firstLine').show()
     $('.authBoxHeader').hide()
     $('#recipeList').show()
+    $('#changePass').trigger('reset')
   })
 })

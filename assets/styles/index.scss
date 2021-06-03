@@ -136,12 +136,17 @@ form {
   font-size: 30px;
   margin-left: 35.5%;
   color: white;
-  animation: blink-animation .5s steps(5, start) infinite;
-  -webkit-animation: blink-animation .5s steps(5, start) infinite;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
   }
   @keyframes blink-animation {
     to {
-    visibility: hidden;
+    color: transparent;
+    }
+  }
+  @keyframes blink-animation {
+    to {
+    color: transparent;
     }
   }
   @-webkit-keyframes blink-animation {
